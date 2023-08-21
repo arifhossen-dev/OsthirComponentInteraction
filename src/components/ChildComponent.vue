@@ -9,12 +9,12 @@ defineEmits(['update:messageFromChild']);
 <template>
   <div class="p-10 rounded-3xl bg-lime-500/20">
     <h3 class="pb-3 text-2xl font-semibold">Child Component</h3>
-    <p class="mt-2 font-bold">Received Message : {{ props.message }}</p>
+    <p class="mt-2 font-bold">Received Message : <span class="text-green-500">{{ props.message }}</span></p>
     <div class="mt-5 text-center">
-      <button @click="$emit('update:messageFromChild', 'This is a Custom message from Child!')"
+      <button @click="$emit('update:messageFromChild', 'This message from Child component!')"
         class="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-indigo-600 transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 group">
         <span
-          class="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-indigo-600 group-hover:h-full"></span>
+          class="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-green-600 group-hover:h-full"></span>
         <span class="absolute right-0 pr-4 duration-200 ease-out group-hover:translate-x-12">
           <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg">
@@ -22,16 +22,17 @@ defineEmits(['update:messageFromChild']);
           </svg>
         </span>
         <span class="absolute left-0 pl-2.5 -translate-x-12 group-hover:translate-x-0 ease-out duration-200">
-          <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
           </svg>
         </span>
-      <span class="relative w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white">
-        Emit Message
-      </span>
-    </button>
+        <span class="relative w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white">
+          Emit Message
+        </span>
+      </button>
+    </div>
   </div>
-</div></template>
+</template>
 
 <style scoped></style>
